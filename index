@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Zillow Houses</title>
+</head>
+<body>
+<h1>Zillow Houses</h1>
+<ul>
+{% for house in houses %}
+<li>
+<a href="{{ house.url }}">{{ house.title }}</a>
+<p>{{ house.price }}</p>
+<p>{{ house.description }}</p>
+<p>Comments:</p>
+<ul>
+{% for comment in house.comments %}
+<li>{{ comment }}</li>
+{% endfor %}
+</ul>
+</li>
+{% endfor %}
+</ul>
+</body>
+</html>
